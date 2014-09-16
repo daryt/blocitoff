@@ -4,7 +4,7 @@ class TaskItemsController < ApplicationController
   # GET /task_items
   # GET /task_items.json
   def index
-    @task_items = TaskItem.all
+    @task_items = TaskItem.mine(current_user.id)
   end
 
   # GET /task_items/1

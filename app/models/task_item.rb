@@ -5,4 +5,8 @@ class TaskItem < ActiveRecord::Base
     7 - (Time.now.day - created_at.day)
   end
 
+  def self.mine(user_id)
+    all.where(user_id: user_id)
+  end
+
 end
