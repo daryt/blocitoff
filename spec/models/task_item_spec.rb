@@ -17,3 +17,19 @@ RSpec.describe TaskItem, :type => :model do
     expect(TaskItem.mine(@user.id).first).to eq(@todo_item)
   end
 end
+
+  describe "days_left" do 
+
+  before do
+  @user = User.create(email: 'test@testing.com', password: 'ACDCBNB!!')
+    @todo_item = TaskItem.create(user_id: @user.id, name: 'test task');
+    @user.save!
+    @todo_item.save!
+  end
+
+  it "gives you the number of days left on a task" do
+  
+  expect( @todo_item.days_left ).to eq(7)
+end
+
+end

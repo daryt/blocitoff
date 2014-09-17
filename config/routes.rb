@@ -2,8 +2,8 @@ Blocitoff::Application.routes.draw do
   resources :task_items
 
   devise_for :users
-  resources :todos, only: [:new, :create, :show]
-  root to: 'todos#new'
+  resources :task_items, only: [:new, :create, :show]
+  root to: 'task_items#new'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
